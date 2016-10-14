@@ -2,12 +2,14 @@
 
 foldName=$1
 
-rm -r $foldName
-rm -r picture
-mkdir picture
-mkdir $foldName
+rm -r data
+mkdir data
+mkdir data/picture
+mkdir data/$foldName
 
 python create_mnist_image.py
+
+cd data
 
 mv rgb_t10k-images.idx3-ubyte rgb_t10k-images-idx3-ubyte
 mv rgb_t10k-labels.idx1-ubyte rgb_t10k-labels-idx1-ubyte
